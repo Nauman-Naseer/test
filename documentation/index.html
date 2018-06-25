@@ -1,0 +1,796 @@
+<!doctype html>
+<!--[if IE 6 ]>
+<html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]>
+<html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]>
+<html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+
+    <title>laraBlog-Blog with Laravel </title>
+
+    <meta name="description"
+          content="Lara Blog is blogging system, perfect for who search for wordpress alternative.">
+    <meta name="author" content="xcoder.io">
+    <meta name="copyright" content="xcoder.io">
+    <meta name="generator" content="xcoder.io">
+    <meta name="date" content="2016-07-03T00:00:00+02:00">
+
+    <link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/jquery.scrollTo.js"></script>
+    <script src="assets/js/jquery.easing.js"></script>
+    <script>document.createElement('section');
+    var duration = '500', easing = 'swing';</script>
+    <script src="assets/js/script.js"></script>
+    <style>
+        html {
+            background-color: #EEEEEE;
+            color: #383838;
+        }
+
+        ::-moz-selection {
+            background: #333636;
+            color: #00DFFC;
+        }
+
+        ::selection {
+            background: #333636;
+            color: #00DFFC;
+        }
+
+        #documenter_sidebar #documenter_logo {
+            background-image: url(logo.png);
+        }
+
+        a {
+            color: #008C9E;
+        }
+
+        .btn {
+            border-radius: 3px;
+        }
+
+        .btn-primary {
+            background-image: -moz-linear-gradient(top, #008C9E, #006673);
+            background-image: -ms-linear-gradient(top, #008C9E, #006673);
+            background-image: -webkit-gradient(linear, 0 0, 0 008 C9E%, from(#343838), to(#006673));
+            background-image: -webkit-linear-gradient(top, #008C9E, #006673);
+            background-image: -o-linear-gradient(top, #008C9E, #006673);
+            background-image: linear-gradient(top, #008C9E, #006673);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#008C9E', endColorstr='#006673', GradientType=0);
+            border-color: #006673 #006673 #bfbfbf;
+            color: #FFFFFF;
+        }
+
+        .btn-primary:hover,
+        .btn-primary:active,
+        .btn-primary.active,
+        .btn-primary.disabled,
+        .btn-primary[disabled] {
+            border-color: #008C9E #008C9E #bfbfbf;
+            background-color: #006673;
+        }
+
+        hr {
+            border-top: 1px solid #D4D4D4;
+            border-bottom: 1px solid #FFFFFF;
+        }
+
+        #documenter_sidebar, #documenter_sidebar ul a {
+            background-color: #2C3E50;
+            color: #FFFFFF;
+        }
+
+        #documenter_sidebar ul a {
+            -webkit-text-shadow: 1px 1px 0px #494F4F;
+            -moz-text-shadow: 1px 1px 0px #494F4F;
+            text-shadow: 1px 1px 0px #494F4F;
+        }
+
+        #documenter_sidebar ul {
+            border-top: 1px solid #212424;
+        }
+
+        #documenter_sidebar ul a {
+            border-top: 1px solid #494F4F;
+            border-bottom: 1px solid #212424;
+            color: #FFFFFF;
+        }
+
+        #documenter_sidebar ul a:hover {
+            background: #22313F;
+            color: #00DFFC;
+            border-top: 1px solid #333636;
+        }
+
+        #documenter_sidebar ul a.current {
+            background: #22313F;
+            color: #00DFFC;
+            border-top: 1px solid #333636;
+        }
+
+        #documenter_copyright {
+            display: block !important;
+            visibility: visible !important;
+        }
+
+        .preview {
+            max-height: 600px;
+            -webkit-box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.1);
+            -moz-box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0px 15px 0 rgba(0, 0, 0, 0.1);
+            clear: both;
+            margin: 20px 20px;
+        }
+
+        .screenshot-image {
+            width: 100%;
+        }
+    </style>
+
+</head>
+<body class="documenter-project-the-invoicer">
+<div id="documenter_sidebar">
+    <br/>
+    <center>
+        <a href="#documenter_cover">
+            <img src="assets/img/Thumnail.png" width="60"><br/>
+
+        </a>
+    </center>
+
+    <!-- Navigation Start-->
+    <ul id="documenter_nav">
+        <li><a class="current" href="#start">Start</a></li>
+        <li><a href="#features" title="Features">Features</a></li>
+        <li><a href="#new_features" title="New Features">What's New in Version 1.1</a></li>
+        <li><a href="#upgrade" title="Upgrade">Upgrade from 1.0 to 1.1</a></li>
+        <li><a href="#install" title="intro">Installation</a></li>
+        <li><a href="#Blog" title="Blog">Blog</a></li>
+        <li><a href="#Category" title="Blog">Category</a></li>
+        <li><a href="#Cat_add" title="Blog">Add Category </a></li>
+        <li><a href="#media" title="Media">Media </a></li>
+        <li><a href="#Basic" title="Basic">Basic Setting</a></li>
+        <li><a href="#users" title="users">Users</a></li>
+        <li><a href="#disqus" title="Recapcha">Add Disqus </a></li>
+        <li><a href="#page" title="Page">Page </a></li>
+        <li><a href="#advertisement" title="Advertisement">Advertisement </a></li>
+        <li><a href="#social_login" title="Social Login">Social Login</a></li>
+        <li><a href="#fb" title="Facebook">Facebook</a></li>
+        <li><a href="#twitter" title="Twitter">Twitter</a></li>
+        <li><a href="#google" title="Google">Google</a></li>
+        <li><a href="#github" title="Github">Github</a></li>
+        <li><a href="#linkedin" title="Linked In">Linked In</a></li>
+        <li><a href="#mail" title="Mail">Mail</a></li>
+        <li><a href="#track_log" title="Track Log">Track Log</a></li>
+        <li><a href="#backup" title="Track Log">Database Backup</a></li>
+        <li><a href="#source_code" title="Source_Code">Source Code Structure</a></li>
+        <li><a href="#customer_support" title="Customer_Support">Customer Support</a></li>
+    </ul>
+    <!-- Navigation End-->
+    <div id="documenter_copyright">&COPY; xCoder.io 2016<br>
+
+    </div>
+</div>
+
+<!-- Home Section Start-->
+<div id="documenter_content">
+
+    <section id="start">
+        <h1>laraBlog V 1.1</h1>
+
+        <h2>laraBlog-Blog with Laravel</h2>
+        <hr>
+        <table>
+            <tr>
+                <td>Support :</td>
+                <td><a href="mailto:xcoderdotio@gmail.com">xcoderdotio@gmail.com</a></td>
+            </tr>
+            <tr>
+                <td>Developer :</td>
+                <td><a href="//xcoder.io">xCoder.io</a></td>
+            </tr>
+        </table>
+        <hr>
+        <img src="assets/img/Thumnail.png">
+
+        <p>
+            Thank you for your Buying Lara Blog.<br/>
+            Please read carefully the complete documentation before starting.
+        </p>
+    </section>
+
+    <!-- Home Section End -->
+
+
+    <!-- Features Section Start -->
+    <section id="features">
+        <div class="page-header"><h3>Key Features:</h3>
+            <hr class="notop">
+        </div>
+        <ul>
+            <li>Secure Blogging System</li>
+            <li>Manage Author, Editor, Subscriber easily</li>
+            <li>Dynamically changeable every Information </li>
+            <li>Search System</li>
+            <li>Two Logo types (Image & Text)</li>
+            <li>404, Search and Archive pages</li>
+            <li>2 Sidebars (Right Sidebar + Footer ) </li>
+            <li>Awesome Slider</li>
+            <li>Beautiful Dashboard.</li>
+            <li>Awesome Feature Post Option</li>
+            <li>Blog posts with 4 layouts (Slider, Feature, Classic, others) Ajax module pagination</li>
+            <li>World most popular Disqus comment (with Disqus API) support</li>
+            <!-- <li>Share blog posts with Facebook, Twitter, Google+, LinkedIn</li> -->
+            <li>SEO friendly HTML5 Mark-up</li>
+            <li>Responsive Design</li>
+            <li>Four Types users who will be able to manage and Create Blog.</li>
+            <li>Login with Facebook.</li>
+            <li>Login With Google Plus.</li>
+            <li>Login With Twitter.</li>
+            <li>Login With Linkin.</li>
+            <li>Login With Github.</li>
+            <li>Mobile compatible.</li>
+            <li>Multi language support.</li>
+            <li>Beautiful track log system.</li>
+            <li>Php / SMTP Mail support.</li>
+            
+        </ul>
+        <br/>
+        <img style="width: 100%" src="assets/img/dashboard.png">
+        <img style="width: 100%;margin-top:20px" src="assets/img/allBlog.png">
+        <br/>
+        <img style="width: 100%;margin-top:20px" src="assets/img/createblog.png">
+        <br>
+        <img style="width: 100%;margin-top:20px" src="assets/img/AllCategory.png">
+        <br>
+        <img style="width: 100%;margin-top:20px" src="assets/img/Category.png">
+        <br>
+        <img style="width: 100%;margin-top:20px" src="assets/img/users.png">
+        <br>
+        <img style="width: 100%;margin-top:20px" src="assets/img/activities.png">
+    </section>
+    <!-- Features Section End -->
+
+
+    <!-- New Features Section Start -->
+    <section id="new_features">
+        <div class="page-header"><h3>What's New in Version 1.1:</h3>
+            <hr class="notop">
+        </div>
+        <h2>Application give some advances to upload Blog with youtube link and image import, Media, page, update user password and Advertisement. </h2>
+        <h5>Upload Blog</h5>
+        <ul>
+            <li>User Can set / remove Media Image by Import from Media Menu. </li>
+            <li>Media Image can be multiple using facility.</li>
+            <li>Youtube link add system facility.</li>
+            <li>All image comes from Media Menu.</li>
+            
+        </ul>
+       <h5>Media</h5>
+       <ul>
+            <li>User can Add image, update and delete image in dashboard view only.  </li>
+            <li>This Media image can be use multiple purpose. Such as Blog Image, Page image etc.</li>
+            <li>Media image consume your time and Nice dashboard. </li>
+       </ul>
+       <h5>Page</h5>
+       <ul>
+            <li>User can Page dynamically.   </li>
+            <li>Page can be designed by user own changes with nice looking facility.  </li>
+            <li>Page also can add image from Media Image menu. </li>
+       </ul>
+       <h5>Category based Advertisement</h5>
+       <ul>
+            <li>Every category has own category based advertisemend facility.    </li>
+            <li> Every Category has two advertisement, One is Sidebar another Category bottom.  </li>
+            <li>Easy system, just copy your js ad code and paste it in your desired category.</li>
+       </ul>
+       <h5>User's password upgrade </h5>
+       <ul>
+            <li>Admin user can be update his and other password update. </li>
+            <li> Go to user's menu. and click edit button. you can update all your information.  </li>
+            <li>if you don't want to update your password just skip, previous password remain. </li>
+       </ul>
+    </section>
+    <!-- New Features Section End -->
+
+    <!-- how to upgrade  Start -->
+    <section id="upgrade">
+        <div class="page-header"><h3>Upgrade:</h3>
+            <hr class="notop">
+        </div>
+        <p>Please fellow the instruction to upgrade..</p>
+        
+        <ul>
+            <li>Take all social credentials backup (copy to a safe place) to resue next.</li>
+            <li>Drop your existing tables (Mind it: you will loose all your data) from Database
+            <br>If you want your existing data of your databaes please follow Method 2. </li>
+            <li>Delete existings codes & replace with new code. </li>
+            <li><a href="#install">Fellow next</a></li>
+        </ul>
+      
+    </section>
+    <!--  how to upgrade End -->
+
+
+
+    <!-- Installation Section start -->
+    <section id="install">
+        <div class="page-header"><h3>Installation</h3>
+            <hr class="notop">
+        </div>
+        <h2>Installation Process</h2>
+        <ul>
+            <li>Creating a new database into your server</li>
+            <li>Unzip the downloaded folder</li>
+            <li>Copy the files inside the zip folder : <b>laraBlog</b> into your server</li>
+            <li>The auto web installer will start</li>
+            <li>Follow on-screen instructions to finish the installation.</li>
+            <li>Enter your database settings</li>
+            <li>Press the "Install" button.</li>
+            <li>That's it!</li>
+        </ul>
+        <div class="page-header"><h3>Creating a new database</h3>
+            <hr class="notop">
+        </div>
+        <p>Before Install you have to get ready your database first.
+
+            Firstly, You have to create a new database before installing laraBlog - Blog with Laravel in your mysql
+            server. If you already know how to do this/or have already created one just skip to the next step.
+
+            Your host will most likely be running phpMyAdmin as mysql manager, if that's the case here's a step by step
+            guide (if not the proccess will be very similar on other managers).
+
+            Login to your control panel, find and click phpMyAdmin link: Click on the database tab in the top menu,
+            enter any name you like and click create</p>
+        <img style="width: 100%" src="assets/img/db_ex_3.png">
+
+        <div class="page-header"><h3>Uploading Files</h3>
+            <hr class="notop">
+        </div>
+        <p>After creating a database, unzpip the .zip file you donwloaded from CodeCanyon and upload the contents of
+            laraBlog - Blog with Laravel folder to your servers root folder (usually called www or html or something
+            similar) or a sub-directory, shared hosting providers usually have a web based file manager, but you should
+            use something like Filezilla to do the upload as the web based managers can cause various problems fairly
+            often.
+
+            Make sure that application/storage and all the sub-folders are writable by your server (have 777 permissions
+            if you are on shared hosting). You can change files and folders permissions by right-clicking them in the
+            filemanager, clicking file permissions, and then entering 777 in the permissions field.</p>
+
+        <div class="page-header"><h3>Installing laraBlog - Blog with Laravel</h3>
+            <hr class="notop">
+        </div>
+        <p>After uploading 'laraBlog - Blog with Laravel' files, simply open your site url and follow on-screen instructions to finish the installation. You just Click Next Button. At last click Install button. thats it !</p>
+        <img style="width: 100%" src="assets/img/installation.png">
+        <img style="width: 100%" src="assets/img/Installation_2.png">
+        <img style="width: 100%" src="assets/img/Installation_3.png">
+    </section>
+    <!-- Installation Section End -->
+
+
+<!-- Blogging Section start -->
+    <section id="Blog">
+        <div class="page-header"><h3>Blogging System</h3>
+            <hr class="notop">
+        </div>
+        <h2>Blogging Process</h2>
+        <ul>
+            <li>Creating a new Blog</li>
+            <li>Follow on-screen instructions to create the blog.</li>
+            <li>Firstly Give Blog Title</li>
+            <li>Insert Blog Feature Image</li>
+            <li>Select Blog Category</li>
+            <li>Select Blog Position, its for Editor and Admin</li>
+            <li>Enter your Blog Text</li>
+            <li>Press the "Submit" Button.</li>
+            <li>That's All!</li>
+        </ul>
+        <div class="page-header"><h3>Creating a new Blog</h3>
+            <hr class="notop">
+        </div>
+        <img style="width: 100%" src="assets/img/createblog.png">
+
+        <div class="page-header"><h3>Managing Blog</h3>
+            <hr class="notop">
+        </div>
+        <p>After creating a Blog, you can also manage them. Edit and Delete also Change its position and Category.</p>
+
+        <img style="width: 100%" src="assets/img/allBlog.png">
+    </section>
+    <!-- Installation Section End -->
+
+<!-- Blogging Category Section start -->
+    <section id="Category">
+        <div class="page-header"><h3>Blog Category</h3>
+            <hr class="notop">
+        </div>
+        <h2>Blogging Category Process</h2>
+        <ul>
+            <li>Creating a new Category</li>
+            <li>Follow on-screen instructions to create the blog Category. </li>
+            <li> Give Blog Category Name</li>
+            <li>Press the "Submit" Button.</li>
+            <li>That's it!</li>
+        </ul>
+        <div class="page-header"><h3>Creating a new Category</h3>
+            <hr class="notop">
+        </div>
+        <img style="width: 100%" src="assets/img/addCategory.png">
+
+        <div class="page-header"><h3>Managing Category</h3>
+            <hr class="notop">
+        </div>
+        <p>After creating a Blog Category, you can also manage them. Edit and Delete the cateogory.</p>
+
+        <img style="width: 100%" src="assets/img/AllCategory.png">
+    </section>
+    <!-- Installation Section End -->
+
+<!-- Blogging Category Section start -->
+    <section id="Cat_add">
+        <div class="page-header"><h3> Category Based Advertisement</h3>
+            <hr class="notop">
+        </div>
+        <h2> Category Based Advertisement Code Adding system </h2>
+        <ul>
+            <li>Every category show different advertisement</li>
+            <li>When Create a new Category</li>
+            <li>When Update a Category</li>
+            <li>Follow on-screen instructions to create the blog Category. </li>
+            <li>Category Page right side advertisement code</li>
+            <li>Category Page bottom advertisement code</li>
+            <li>Press the "Submit" Button.</li>
+            <li>That's it!</li>
+        </ul>
+        <img style="width: 100%" src="assets/img/addCategory.png">
+
+    </section>
+    <!-- Category Section End -->
+
+<!-- Blogging Media Section start -->
+    <section id="media">
+        <div class="page-header"><h3> Media Upload and use</h3>
+            <hr class="notop">
+        </div>
+        <h2> Media Upload and using system </h2>
+        <ul>
+            <li>Go to Media Menu by clicking Media menu. </li>
+            <li>Create new Media, Click Create Media Tab. it will expand with Title and Media file.</li>
+            <li>Type someting in Title box to name your media, its mandatory.  </li>
+            <li>Click Media to upload a image. </li>
+            <li>Press the "Submit" Button.</li>
+            <li>That's it!</li>
+        </ul>
+        <img style="width: 100%" src="assets/img/addMedia.png">
+
+
+        <div class="page-header"><h3>All Media Area to controll it over edit and delete option. </h3>
+            <hr class="notop">
+        </div>
+        
+        <img style="width: 100%" src="assets/img/Media.png">
+
+    </section>
+    <!-- Media Section End -->
+
+
+
+
+
+    <!-- Installation Section start -->
+    <section id="Basic">
+        <div class="page-header"><h3>Basic Settings</h3>
+            <hr class="notop">
+        </div>
+        <h2>Basic Setting Process</h2>
+        <ul>
+            <li>Change <b>Basic</b> Setting. Please Click Dashboard Settings and Select Basic Setting link and Change the Your site Basic Information. </li>
+            <li>You can change your site Logo, Site Name, Tag Name, About, Services, Contact, Follow link, Copyright And Disqus Commenting Information.</li>
+            <li>It has Deafult Values.</li>
+            <li> Edit and Change with your  <b>Site Information </b> </li>
+            <li>Click the <b>"Submit"</b> button.</li>
+            <li>That's it!</li>
+        </ul>
+        <div class="page-header"><h3>Changing Basic Settings</h3>
+            <hr class="notop">
+        </div>
+        
+        <img style="width: 100%" src="assets/img/basic.png">
+    </section>
+    <!-- Basic Section End -->
+
+    <!-- user Management Section start -->
+    <section id="users">
+        <div class="page-header"><h3>User Management</h3>
+            <hr class="notop">
+        </div>
+        <h2>User Role Manage Process</h2>
+        <ul>
+            <li>There are Four Types Role of User. Administrator, Editor, Author and Subscriber.</li>
+            <li>Administrator will be fully controll the Dashboard panel.</li>
+            <li>Editor will be able to edit/delete the blog and can be set the blog position.</li>
+            <li>Author will be able to create the blog only.</li>
+            <li>Subscriber only can View the Dashboard. Administrator can be upgrade the role.</li>
+        </ul>
+        <ul>
+            <li>Creating a new User</li>
+            <li>Follow on-screen instructions to create a new user with its Role.</li>
+            <li>Press the "Submit" button.</li>
+            <li>That's it!</li>
+        </ul>
+        <div class="page-header"><h3>Creating a new User</h3>
+            <hr class="notop">
+        </div>
+        <p>
+            Firstly, You have to click User Menu from leftside of the menu list. then click Add menu.
+            Give User Full name, Email Address, Login Password (minimum 6 digit) and Select User Role. 
+            </p> 
+
+        <img style="width: 100%" src="assets/img/createUser.png">
+
+        <div class="page-header"><h3>Role User</h3>
+            <hr class="notop">
+        </div>
+        <p>After creating a user panel. You can Change/Upgrade User Role, Also can Ban Any user.</p>
+
+        <img style="width: 100%" src="assets/img/roleUser.png">
+    </section>
+    <!-- Installation Section End -->
+
+        <!-- Disqus Setting  -->
+    <section id="disqus">
+        <div class="page-header"><h3>Add Disqus Information</h3>
+            <hr class="notop">
+        </div>
+        <h2>Add Your Domain Disqus </h2>
+        <ul>
+            <li>Create a <b>Disqus</b>. Please <a href="https://disqus.com/admin/create/" target="_blank">Click</a> the link and Create it after login. </li>
+            <li>If you create it, then go to your site Dashboard.</li>
+            <li>Click Dashboard <b>Settings</b> Menu, it will Expand with few sub-menu. Click <b>  Basic Setting </b> and select <b>Disqus</b>.</li>
+            <li>It has Deafult Values.</li>
+            <li> Edit and Change with your  <b>Disqus URL </b> Name </li>
+            <li>Click the <b>"Update"</b> button.</li>
+            <li>That's it!</li>
+        </ul>
+        <div class="page-header"><h3>Creating Disqus Information</h3>
+            <hr class="notop">
+        </div>
+        <img style="width: 100%" src="assets/img/create_dis.png">
+        <div class="page-header"><h3>Take Disqus URL From Disqus Universal Area </h3>
+            <hr class="notop">
+        </div>
+        <img style="width: 100%" src="assets/img/disqus.png">
+        <img style="width: 100%" src="assets/img/disqus1.png">
+
+
+    </section>
+    <!-- Upload Movie Section End -->
+
+        <!-- Page Setting  -->
+    <section id="page">
+        <div class="page-header"><h3> Add Page and Updating it.</h3>
+            <hr class="notop">
+        </div>
+        <h2>Add Page </h2>
+        <ul>
+            <li>Creating a new page</li>
+            <li>Click Dashboard Page Menu</li>
+            <li>Select Add New page</li>
+            <li>Give a Page Name, its mandatory</li>
+            <li>Import a Page Image from Media Table, its optional</li>
+            <li>Give Page Content.</li>
+            <li>Press the "Submit" button.</li>
+            <li>That's it!</li>
+        </ul>
+        <div class="page-header"><h3>Creating a page</h3>
+            <hr class="notop">
+        </div>
+        <img style="width: 100%" src="assets/img/addpage.png">
+        <div class="page-header"><h3> Page Controll area. </h3>
+            <hr class="notop">
+        </div>
+        <img style="width: 100%" src="assets/img/page.png">
+
+
+    </section>
+    <!-- Page Section End -->
+
+        <!-- Page Setting  -->
+    <section id="advertisement">
+        <div class="page-header"><h3> Advertisement Setting .</h3>
+            <hr class="notop">
+        </div>
+        <h2> Adsense or other advertisement setting  </h2>
+        <ul>
+            <li>Setting a advertisement</li>
+            <li>Click Dashboard Advertisement Menu</li>
+            <li>Their are Banner, Sidebar and Single Page Advertisement settings</li>
+            <li>Give a add js full code, its mandatory</li>
+            <li>Press the "Submit" button.</li>
+            <li>That's it!</li>
+        </ul>
+        <div class="page-header"><h3>Setting a advertisement </h3>
+            <hr class="notop">
+        </div>
+        <img style="width: 100%" src="assets/img/advertisement.png">
+        <div class="page-header"><h3> Category Based Advertisement area. </h3>
+            <hr class="notop">
+        </div>
+        <img style="width: 100%" src="assets/img/addCategory.png">
+
+
+    </section>
+    <!-- Page Section End -->
+
+
+    <!-- social_login Section Start -->
+    <section id="social_login">
+        <div class="page-header"><h3>Social Login</h3>
+            <hr class="notop">
+        </div>
+        <p>In order to make social login (logging in via google, twitter and facebook) work you will need to register
+            for a corresponding app and get that services <strong>Client ID</strong> and <strong>Client Secret</strong>.
+            Check out the section for each service for a detailed instruction for how to register and get those tokens.
+            Once you've got your client id and secret simply enter them in corresponding field in admin area -&gt; third
+            party services and keys.</p>
+        <br/>
+        <img style="width: 100%" src="assets/img/social-login.png" class="screenshot-image">
+        <!-- ************** Facebook ********************** -->
+        <div class="page-header" id="fb"><h3>Facebook</h3>
+            <hr class="notop">
+        </div>
+        <p> You can resgister for a facebook app <a target="_blank" href="https://developers.facebook.com/">Here</a> by
+            clicking on <strong>My Apps &gt; add a new app</strong> at the top. Once you create the app you can find
+            your id and secret in your app dashboard, you will also need to enter your site url in <strong>Settings &gt;
+                site url field</strong> and make your app public from <strong>Staus &amp; Review</strong> tab.</p>
+        <br/>
+        <img style="width: 100%" src="assets/img/facebook_ex_1.png" class="screenshot-image">
+        <img style="width: 100%" src="assets/img/facebook.png" class="screenshot-image">
+        <!--************** Twitter ********************** -->
+        <div class="page-header" id="twitter"><h3>Twitter</h3>
+            <hr class="notop">
+        </div>
+        <p>You can register for a twitter app <a target="_blank" href="https://dev.twitter.com/apps/new">Here</a>, after
+            you register you will need to enter your site url in <strong>Website</strong> and <strong>Callback
+                Url</strong> fields in your app settings, you can find your key and secret in the <strong>Keys &amp;
+                Access Tokens</strong> tab.</p>
+        <br/>
+        <p>Set callback url</p>
+        <img style="width: 100%" src="assets/img/twitter_call_back.png" class="screenshot-image">
+        <p>Get client ID and Client Secret</p>
+        <img style="width: 100%" src="assets/img/twitter-id-secret.png" class="screenshot-image">
+
+        <!--************** Google ********************** -->
+        <div class="page-header" id="google"><h3>Google</h3>
+            <hr class="notop">
+        </div>
+        <p>You can register for a google app <a target="_blank" href="https://console.developers.google.com/project/_/apiui/apis/library">Here</a>
+            by clicking on <strong>Create new project</strong>, after creating new project go to credentials tab and in
+            the authorized redirect uri field enter <strong>http://yoursiteurl.com/auth/social/google/login</strong>,
+            you might also need to enable <strong>Google plus</strong> and <strong>contacts</strong> APIs.</p>
+        <br/>
+        <img style="width: 100%" src="assets/img/google_ex_1.jpg" class="screenshot-image">
+        <img style="width: 100%" src="assets/img/social_ex_3.jpg" class="screenshot-image">
+
+        <!--************** Github ********************** -->
+        <div class="page-header" id="github"><h3>Github</h3>
+            <hr class="notop">
+        </div>
+        <p>You can register for a github app <a target="_blank"
+                                                href="https://github.com/settings/applications/new">Here</a> by clicking
+            on <strong>Create new project</strong>, after creating new project go to credentials tab and in the
+            authorized redirect uri field enter <strong>http://yoursiteurl.com/github/callback</strong></p>
+        <br/>
+        <img style="width: 100%" src="assets/img/github.png" class="screenshot-image">
+
+        <!--************** Linked In ********************** -->
+        <div class="page-header" id="linkedin"><h3>Linked In</h3>
+            <hr class="notop">
+        </div>
+        <p>You can register for a github app <a target="_blank"
+                                                href="https://www.linkedin.com/developer/apps/new">Here</a> by clicking
+            on <strong>Create Application</strong>, after creating new Application with valid data. Hit submit and on
+            next page you have to put your authorized redirect uri field enter
+            <strong>http://yoursiteurl.com/linkedin/callback</strong></p>
+        <br/>
+        <img style="width: 100%" src="assets/img/linkedIn.png" class="screenshot-image">
+    </section>
+    <!-- Settings Section End 
+    <!-- mail Section Start -->
+    <section id="mail">
+        <div class="page-header"><h3>Mail</h3>
+            <hr class="notop">
+        </div>
+
+        <p>In order to make mail work (for password reset and other functions), you will need to register for a mandrill API key. Mandrill is used to avoid the many problems that occur when using public smtp servers (like gmail or your hostings private one). Here's how to get your API key.</p>
+
+        <p>If you want to use SMTP instead (or one of the other available options), go to <strong>admin area &gt; settings &gt; mail</strong> and simply change mandrill to another option and enter any other required details like host, usernamer, password etc.</p>
+
+        <h3>Register for mandrill api key</h3>
+        <p>To register for mandrill key go to this <a target="_blank" href="https://mandrill.com/signup/">url</a>, create a new account and then log in. Then click <strong>get api keys -&gt; +add api key</strong></p>
+        <img src="assets/img/mandrill_ex_1.png">
+        <img src="assets/img/mandrill_ex_2.png" class="screenshot-image">
+        <p>Then simply copy mandrill api key and enter it into corresponding field in <strong>admin area &gt; settings &gt; mail</strong></p>
+        <img src="assets/img/mandrill_ex_3.png" class="screenshot-image">
+        <img src="assets/img/mandrill_ex_4.png">
+
+    </section>
+
+
+    <!-- User Section Start -->
+    <section id="track_log">
+        <div class="page-header"><h3>All Activities</h3>
+            <hr class="notop">
+        </div>
+        <p style="text-align: justify;; width: 800px;">
+            The tab Activities You can view all user Activities . It's also help you to view individual user log in and log out.
+            You will can restrict user activities, manage their info update and create user. It will be able to full controll over
+            your user actions.
+
+        </p>
+        <br/>
+        <img src="assets/img/Activities.png" class="screenshot-image">
+
+    </section>
+    <section id="backup">
+        <div class="page-header"><h3>Database Backup</h3>
+            <hr class="notop">
+        </div>
+        <p style="text-align: justify;; width: 800px;">
+            You can easily take backup of your database by simply clicking on the menu tab Database Backup. Everything in your database will get in the
+            database that will be exported as a zip file in your local directory.
+        </p>
+        <br/>
+        <img src="assets/img/backup.png" class="screenshot-image">
+
+    </section>
+    <!-- User Section End -->
+    <!-- Source Code Section Start -->
+    <section id="source_code">
+        <div class="page-header"><h3>Source Code Structure</h3>
+            <hr class="notop">
+        </div>
+        <ul>
+            <li>Build up on powerful Laravel php framework.</li>
+            <li>For more info on Laravel , go to : https://laravel.com/docs/5.2 /</li>
+            <li>Follows MVC model.</li>
+        </ul>
+        <h5>Included Files:</h5>
+        <ul>
+            <li>Controller path : application/app/Http/Controllers</li>
+            <li>Login & Register controller : application/app/Http/Controllers/Auth</li>
+            <li>Models Path: application/app/Models/</li>
+            <li>Configuration files : application/config and .env</li>
+            <li>Template css files : css/</li>
+            <li>Template font files : fonts/</li>
+            <li>Template js files : js</li>
+            <li>Template image files : img/</li>
+            <li>images uploaded in : uploads/</li>
+        </ul>
+        <br/>
+    </section>
+    <!-- Source Code Section Start -->
+
+
+    <!-- Support Section Start -->
+    <section id="customer_support">
+        <div class="page-header"><h3>Customer Support</h3>
+            <hr class="notop">
+        </div>
+        <p style="text-align: justify;; width: 800px;"> xCoder.io is always ready to serve its valued clients.
+            For any kind of after sales support or customization - Don't hesitate to contact us at: <br/><br/>
+            E-Mail: <a href="mailto:xcoderdotio@gmail.com">xcoderdotio@gmail.com</a><br/>
+        </p>
+        <br/>
+        <img src="assets/img/rate_us.jpg" alt="rate_us" class="rate-us">
+    </section>
+    <!-- Support Section End -->
+</div>
+</body>
+</html>
